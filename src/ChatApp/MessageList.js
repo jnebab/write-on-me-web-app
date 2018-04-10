@@ -9,17 +9,11 @@ class MessageList extends Component {
     this.state = {
       messages: []
     };
-    let app = this.props.db.database().ref(" ");
+    let app = this.props.db.database().ref("messages");
     app.on("value", snapshot => {
       this.getData(snapshot.val());
     });
   }
-
-  // componentDidUpdate() {
-  //   // There is a new message in the state, scroll to bottom of list
-  //   const objDiv = document.getElementById('newMessage');
-  //   objDiv.scrollTop = objDiv.scrollHeight;
-  // }
 
   getData(values) {
     let messagesVal = values;
@@ -32,12 +26,12 @@ class MessageList extends Component {
       })
       .value();
     this.setState({
-      messages
+      messages: messages
     });
   }
 
   render() {
-    let messageNodes = this.state.messages.map(message => {
+    let messageNodes = this.state.messages.map((message) => {
       return (
         <div className="messageCard">
           <div className="messageContent">
@@ -46,7 +40,9 @@ class MessageList extends Component {
         </div>
       );
     });
-    return <div class="messageNodes" id="newMessage">{messageNodes}</div>;
+    return (
+      <div className="messageNodes" id="newMessage">{ messageNodes }</div>
+    );
   }
 }
 
