@@ -1,0 +1,39 @@
+.messageCard {
+    padding: 0.5rem;
+    border: 1px solid green;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    background-color:#336633;
+    color: white;
+}
+
+.messageList {
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    height: 500px;
+    overflow-y: scroll;
+    width:50%;
+    border: 3px solid #3333;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    
+}
+
+.messageNode {
+    display: flex;
+    align-self: baseline;
+}
+
+.chat-container {
+    width: 100%;
+
+}
+
+.messageBox textarea{
+    border: 1px solid #3333;
+    height: 5rem;
+    color: #336633;
+    margin-top: 0.1rem;
+}
